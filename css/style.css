@@ -1,0 +1,104 @@
+:root {
+    --bg-core: #181a1e;
+    --bg-glass: rgba(24, 26, 30, 0.8);
+    --text-primary: #dddddd;
+    --text-secondary: #888888;
+    --accent-light: rgba(255, 255, 255, 0.08);
+    --font-stack: 'Geist Mono', monospace;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-bold: 700;
+}
+
+body {
+    background-color: var(--bg-core);
+    font-family: var(--font-stack);
+    color: var(--text-primary);
+    overflow: hidden;
+    height: 100vh;
+    margin: 0;
+}
+
+.app-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    /* Firefox */
+    scrollbar-width: none;
+}
+
+/* Chrome, Safari, Edge */
+.app-container::-webkit-scrollbar {
+    display: none;
+}
+
+.nav {
+    position: fixed;
+    top: 3rem;
+    right: 4rem;
+    z-index: 100;
+}
+
+.social {
+    position: fixed;
+    bottom: 3rem;
+    left: 4rem;
+    z-index: 100;
+}
+
+.nav__list,
+.social__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+}
+
+.nav__link {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: var(--weight-regular);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav__link:hover {
+    color: var(--text-primary);
+}
+
+.social__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.social__link {
+    color: var(--text-secondary);
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+}
+
+.social__link:hover {
+    color: var(--text-primary);
+    transform: scale(1.1);
+}
+
+.scroll-indicator {
+    position: fixed;
+    bottom: 3rem;
+    right: 4rem;
+    z-index: 100;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--text-secondary);
+    opacity: 0.5;
+}
