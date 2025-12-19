@@ -14,6 +14,7 @@ body {
     background-color: var(--bg-core);
     font-family: var(--font-stack);
     color: var(--text-primary);
+    background-image: radial-gradient(circle at 40% 20%, var(--accent-light) 0%, transparent 60%);
     overflow: hidden;
     height: 100vh;
     margin: 0;
@@ -101,4 +102,32 @@ body {
     letter-spacing: 0.3em;
     color: var(--text-secondary);
     opacity: 0.5;
+}
+
+/* --- Hero Section --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero__title {
+    color: var(--text-primary);
+    font-size: 10rem;
+    font-weight: var(--weight-medium);
+    line-height: 1;
+    letter-spacing: -0.05em;
+    margin: 0;
+}
+
+.hero__subtitle {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: var(--weight-regular);
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    margin-top: 2rem;
 }
