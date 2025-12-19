@@ -18,8 +18,8 @@
     </header>
     <aside class="social">
         <ul class="social__list">
-            <li><a href="#" target="_blank" class="social__link"><i class="fab fa-github"></i></a></li>
-            <li><a href="#" target="_blank" class="social__link"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="https://github.com/BrianSuhit" target="_blank" class="social__link"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/briansuhit/" target="_blank" class="social__link"><i class="fab fa-linkedin-in"></i></a></li>
         </ul>
     </aside>
     <aside class="scroll-indicator">
@@ -66,12 +66,13 @@
         <section id="contacto" class="contact">
             <div class="contact__card">
                 <h2 class="contact__title">CONTACTO</h2>
-                    <form class="form">
-                        <input type="text" class="form__input" placeholder="Nombre" name="name" required>
-                        <input type="email" class="form__input" placeholder="Email" name="email" required>
-                        <textarea class="form__input" placeholder="Mensaje" name="message" rows="4" required></textarea>
-                        <button type="submit" class="form__submit">ENVIAR MENSAJE</button>
-                    </form>
+                <form class="form" name="contacto" method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="contacto">
+                    <input type="text" class="form__input" placeholder="Nombre" name="nombre" required>
+                    <input type="email" class="form__input" placeholder="Email" name="email" required>
+                    <textarea class="form__input" placeholder="Mensaje" name="mensaje" rows="4" required></textarea>
+                    <button type="submit" class="form__submit">ENVIAR MENSAJE</button>
+                </form>
             </div>
         </section>
     </main>
