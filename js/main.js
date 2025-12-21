@@ -48,25 +48,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Mobile Navigation
+// Mobile Navigation
     const navToggle = document.querySelector('.nav__toggle');
     const navClose = document.querySelector('.nav__close');
     const navOverlay = document.querySelector('.nav__overlay');
     const navLinks = document.querySelectorAll('.nav__overlay .nav__link');
 
     if (navToggle && navOverlay && navClose) {
+        // ABRIR MENÚ
         navToggle.addEventListener('click', () => {
             navOverlay.classList.add('nav__overlay--active');
+            navToggle.style.opacity = '0'; // Ocultar hamburguesa
+            navToggle.style.pointerEvents = 'none'; // Desactivar clic por si acaso
         });
 
+        // CERRAR MENÚ (Botón X)
         navClose.addEventListener('click', () => {
             navOverlay.classList.remove('nav__overlay--active');
+            navToggle.style.opacity = '1'; // Mostrar hamburguesa
+            navToggle.style.pointerEvents = 'all';
         });
 
+        // CERRAR MENÚ (Al hacer clic en un link)
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navOverlay.classList.remove('nav__overlay--active');
+                navToggle.style.opacity = '1'; // Mostrar hamburguesa
+                navToggle.style.pointerEvents = 'all';
             });
         });
     }
+
 });
