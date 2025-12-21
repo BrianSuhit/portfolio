@@ -10,11 +10,25 @@
 </head>
 <body>
     <header class="nav">
-        <ul class="nav__list">
-            <li class="nav__item"><a href="#inicio" class="nav__link">SOBRE MÍ</a></li>
-            <li class="nav__item"><a href="#proyectos" class="nav__link">PROYECTOS</a></li>
-            <li class="nav__item"><a href="#contacto" class="nav__link">CONTACTO</a></li>
-        </ul>
+        <button class="nav__toggle" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav__overlay">
+            <button class="nav__close" aria-label="Cerrar menú">
+                <i class="fas fa-times"></i>
+            </button>
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#inicio" class="nav__link">SOBRE MÍ</a></li>
+                <li class="nav__item"><a href="#proyectos" class="nav__link">PROYECTOS</a></li>
+                <li class="nav__item"><a href="#contacto" class="nav__link">CONTACTO</a></li>
+            </ul>
+            <div class="nav__social">
+                <ul class="social__list">
+                    <li><a href="https://github.com/BrianSuhit" target="_blank" class="social__link"><i class="fab fa-github"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/briansuhit/" target="_blank" class="social__link"><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>
+            </div>
+        </div>
     </header>
     <aside class="social">
         <ul class="social__list">

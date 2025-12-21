@@ -122,6 +122,67 @@ body {
     height: 0;
 }
 
+/* --- Mobile Navigation --- */
+.nav__toggle {
+    display: none; /* Hidden on desktop */
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: fixed;
+    top: 3rem;
+    right: 4rem;
+    z-index: 1100;
+}
+
+.nav__overlay {
+    position: fixed;
+    inset: 0;
+    background-color: var(--bg-core);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.nav__overlay--active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.nav__overlay .nav__list {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+}
+
+.nav__overlay .nav__link {
+    font-size: 2rem;
+    font-weight: var(--weight-medium);
+}
+
+.nav__overlay .social__list {
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.nav__close {
+    position: absolute;
+    top: 3rem;
+    right: 4rem;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
 /* --- Hero Section --- */
 .hero {
     min-height: 100vh;
@@ -232,10 +293,18 @@ body {
         font-size: 15vw;
         letter-spacing: -2px;
     }
+    
+    /* Hide desktop nav and show mobile toggle */
+    .nav > .nav__list {
+        display: none;
+    }
+
+    .nav__toggle {
+        display: block;
+    }
 
     .social,
-    .scroll-indicator,
-    .nav__list {
+    .scroll-indicator {
         display: none;
     }
 
