@@ -224,7 +224,18 @@ body {
 
 /* --- Mobile Carousel for Projects --- */
 @media (max-width: 768px) {
-    .scroll-indicator {
+    .app-container {
+        padding-top: 0;
+    }
+
+    .hero__title {
+        font-size: 15vw;
+        letter-spacing: -2px;
+    }
+
+    .social,
+    .scroll-indicator,
+    .nav__list {
         display: none;
     }
 
