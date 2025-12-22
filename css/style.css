@@ -383,7 +383,6 @@ body {
 .form__input:focus {
     outline: none;
     border-bottom-color: var(--text-primary);
-    /* box-shadow: 0 5px 15px -5px rgba(221, 221, 221, 0.2); QUITAR SOMBREADO*/
 }
 
 /* Specific style for textarea */
@@ -393,8 +392,9 @@ textarea.form__input {
 }
 
 .form__submit {
+    box-shadow: 15px 15px 50px -5px rgba(0,0,0,0.5);
     background: transparent;
-    /* border: 1px solid var(--text-secondary); */
+    border: none;
     color: var(--text-primary);
     padding: 1rem 2rem;
     width: 100%;
@@ -411,7 +411,7 @@ textarea.form__input {
 .form__submit:hover {
     background: var(--text-primary);
     color: var(--bg-core);
-    /* border-color: var(--text-primary); */
+    border-color: var(--text-primary);
 }
 
 /* --- Scroll Animation --- */
