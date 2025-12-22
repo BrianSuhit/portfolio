@@ -79,4 +79,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Scroll Animation
+    const faders = document.querySelectorAll('.fade-in');
+    const scrollContainer = document.querySelector('.app-container');
+
+    const appearOptions = {
+        root: scrollContainer, // Use the custom scroll container
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px" // Start animation a bit sooner
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
+            } else {
+                entry.target.classList.add('visible');
+                appearOnScroll.unobserve(entry.target); // Animate only once
+            }
+        });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+    });
 });
