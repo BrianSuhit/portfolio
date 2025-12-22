@@ -294,11 +294,7 @@ body {
         letter-spacing: -2px;
     }
     
-    /* Hide desktop nav and show mobile toggle */
-    .nav > .nav__list {
-        display: none;
-    }
-
+    /* Hide desktop nav elements and show mobile toggle */
     .nav__toggle {
         display: block;
     }
@@ -428,5 +424,41 @@ textarea.form__input {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+@media (min-width: 769px) {
+    /* --- Desktop Navigation --- */
+
+    /* Hide mobile-only elements */
+    .nav__toggle,
+    .nav__close,
+    .nav__overlay .nav__social {
+        display: none;
+    }
+
+    /* Restore overlay to act as a simple container */
+    .nav__overlay {
+        position: static;
+        height: auto;
+        background: transparent;
+        opacity: 1;
+        pointer-events: all;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 5rem;
+    }
+
+    /* Restore desktop list styles */
+    .nav__overlay .nav__list {
+        flex-direction: row;
+        gap: 5rem;
+        text-align: right;
+    }
+
+    /* Restore desktop link styles */
+    .nav__overlay .nav__link {
+        font-size: 0.8rem;
+        font-weight: var(--weight-regular);
+    }
 }
 
