@@ -394,6 +394,7 @@ textarea.form__input {
 .form__submit {
     box-shadow: 15px 15px 50px -5px rgba(0,0,0,0.5);
     background: transparent;
+    text-decoration: none;
     border: none;
     color: var(--text-primary);
     padding: 1rem 2rem;

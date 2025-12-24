@@ -1,106 +1,112 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const lineTop = document.querySelector('.line-top');
-    const lineBottom = document.querySelector('.line-bottom');
     
-    const heroSection = document.querySelector('#inicio');
-    const projectsSection = document.querySelector('#proyectos');
-    const contactSection = document.querySelector('#contacto');
+    /**
+     * Initializes an IntersectionObserver to show or hide top and bottom 
+     * decorative lines based on the currently visible section.
+     */
+    const initDirectionalScroll = () => {
+        const lineTop = document.querySelector('.line-top');
+        const lineBottom = document.querySelector('.line-bottom');
+        
+        const heroSection = document.querySelector('#inicio');
+        const projectsSection = document.querySelector('#proyectos');
+        const contactSection = document.querySelector('#contacto');
 
-    // Default state: At the top
-    if (lineTop) {
+        if (!lineTop || !lineBottom || !heroSection || !projectsSection || !contactSection) return;
+
+        // Default state: At the top
         lineTop.classList.add('line-hidden');
-    }
 
-    const sections = [heroSection, projectsSection, contactSection];
+        const sections = [heroSection, projectsSection, contactSection];
 
-    const observerOptions = {
-        root: document.querySelector('.app-container'), // Observe inside the scrollable container
-        rootMargin: '0px',
-        threshold: 0.5 
-    };
+        const observerOptions = {
+            root: document.querySelector('.app-container'),
+            rootMargin: '0px',
+            threshold: 0.5 
+        };
 
-    const observerCallback = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const targetId = entry.target.id;
-                
-                if (!lineTop || !lineBottom) return;
-
-                if (targetId === 'inicio') {
-                    lineTop.classList.add('line-hidden');
-                    lineBottom.classList.remove('line-hidden');
-                } else if (targetId === 'proyectos') {
-                    lineTop.classList.remove('line-hidden');
-                    lineBottom.classList.remove('line-hidden');
-                } else if (targetId === 'contacto') {
-                    lineTop.classList.remove('line-hidden');
-                    lineBottom.classList.add('line-hidden');
+        const observerCallback = (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const targetId = entry.target.id;
+                    
+                    if (targetId === 'inicio') {
+                        lineTop.classList.add('line-hidden');
+                        lineBottom.classList.remove('line-hidden');
+                    } else if (targetId === 'proyectos') {
+                        lineTop.classList.remove('line-hidden');
+                        lineBottom.classList.remove('line-hidden');
+                    } else if (targetId === 'contacto') {
+                        lineTop.classList.remove('line-hidden');
+                        lineBottom.classList.add('line-hidden');
+                    }
                 }
-            }
-        });
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    sections.forEach(section => {
-        if (section) {
-            observer.observe(section);
-        }
-    });
-
-// Mobile Navigation
-    const navToggle = document.querySelector('.nav__toggle');
-    const navClose = document.querySelector('.nav__close');
-    const navOverlay = document.querySelector('.nav__overlay');
-    const navLinks = document.querySelectorAll('.nav__overlay .nav__link');
-
-    if (navToggle && navOverlay && navClose) {
-        // ABRIR MENÚ
-        navToggle.addEventListener('click', () => {
-            navOverlay.classList.add('nav__overlay--active');
-            navToggle.style.opacity = '0'; // Ocultar hamburguesa
-            navToggle.style.pointerEvents = 'none'; // Desactivar clic por si acaso
-        });
-
-        // CERRAR MENÚ (Botón X)
-        navClose.addEventListener('click', () => {
-            navOverlay.classList.remove('nav__overlay--active');
-            navToggle.style.opacity = '1'; // Mostrar hamburguesa
-            navToggle.style.pointerEvents = 'all';
-        });
-
-        // CERRAR MENÚ (Al hacer clic en un link)
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navOverlay.classList.remove('nav__overlay--active');
-                navToggle.style.opacity = '1'; // Mostrar hamburguesa
-                navToggle.style.pointerEvents = 'all';
             });
-        });
-    }
+        };
 
-    // Scroll Animation
-    const faders = document.querySelectorAll('.fade-in');
-    const scrollContainer = document.querySelector('.app-container');
-
-    const appearOptions = {
-        root: scrollContainer, // Use the custom scroll container
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px" // Start animation a bit sooner
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        sections.forEach(section => observer.observe(section));
     };
 
-    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return;
-            } else {
-                entry.target.classList.add('visible');
-                appearOnScroll.unobserve(entry.target); // Animate only once
-            }
-        });
-    }, appearOptions);
+    /**
+     * Sets up event listeners for the mobile navigation, handling the
+     * opening and closing of the navigation overlay.
+     */
+    const initMobileMenu = () => {
+        const navToggle = document.querySelector('.nav__toggle');
+        const navClose = document.querySelector('.nav__close');
+        const navOverlay = document.querySelector('.nav__overlay');
+        const navLinks = document.querySelectorAll('.nav__overlay .nav__link');
 
-    faders.forEach(fader => {
-        appearOnScroll.observe(fader);
-    });
+        if (!navToggle || !navOverlay || !navClose) return;
+
+        const openMenu = () => {
+            navOverlay.classList.add('nav__overlay--active');
+            navToggle.style.opacity = '0';
+            navToggle.style.pointerEvents = 'none';
+        };
+
+        const closeMenu = () => {
+            navOverlay.classList.remove('nav__overlay--active');
+            navToggle.style.opacity = '1';
+            navToggle.style.pointerEvents = 'all';
+        };
+
+        navToggle.addEventListener('click', openMenu);
+        navClose.addEventListener('click', closeMenu);
+        navLinks.forEach(link => link.addEventListener('click', closeMenu));
+    };
+
+    /**
+     * Initializes an IntersectionObserver to trigger fade-in animations 
+     * for elements with the .fade-in class as they enter the viewport.
+     */
+    const initScrollReveal = () => {
+        const faders = document.querySelectorAll('.fade-in');
+        const scrollContainer = document.querySelector('.app-container');
+
+        if (!scrollContainer || faders.length === 0) return;
+
+        const appearOptions = {
+            root: scrollContainer,
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const appearOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => appearOnScroll.observe(fader));
+    };
+
+    // Initialize all functionalities
+    initDirectionalScroll();
+    initMobileMenu();
+    initScrollReveal();
 });
