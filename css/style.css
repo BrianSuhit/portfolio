@@ -217,16 +217,18 @@ body {
 }
 
 .projects__grid {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    padding: 0 2rem;
+    align-items: start;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem; /* Add horizontal padding */
 }
 
 .card {
     display: block;
-    flex: 0 0 350px;
     text-align: center;
     opacity: 0.7;
     transform: scale(1);
@@ -234,6 +236,7 @@ body {
     background: transparent;
     text-decoration: none;
     color: inherit;
+    width: 100%; /* Make card responsive */
 }
 
 /* Spotlight Effect */
@@ -283,7 +286,7 @@ body {
     margin: 0;
 }
 
-/* --- Mobile Carousel for Projects --- */
+/* --- Mobile Specific Adjustments --- */
 @media (max-width: 768px) {
     .app-container {
         padding-top: 0;
@@ -304,21 +307,12 @@ body {
         display: none;
     }
 
+    /* On mobile, the grid will stack automatically due to auto-fit */
     .projects__grid {
-        justify-content: flex-start;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 2rem;
-        scrollbar-width: none; /* Firefox */
-    }
-    
-    .projects__grid::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Edge */
+        padding: 0 1rem; /* Adjust padding for mobile */
     }
 
     .card {
-        flex: 0 0 85vw;
-        scroll-snap-align: center;
         opacity: 1; /* Disable spotlight on mobile */
     }
 
