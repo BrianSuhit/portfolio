@@ -20,9 +20,16 @@
                 <i class="fas fa-times"></i>
             </button>
             <ul class="nav__list">
-                <li class="nav__item"><a href="#inicio" class="nav__link">SOBRE MÍ</a></li>
-                <li class="nav__item"><a href="#proyectos" class="nav__link">PROYECTOS</a></li>
-                <li class="nav__item"><a href="#contacto" class="nav__link">CONTACTO</a></li>
+                <li class="nav__item">
+                    <div id="flags" class="flags">
+                        <span class="flags__item flags__item--active" data-language="es">ES</span>
+                        <span class="flags__separator">/</span>
+                        <span class="flags__item" data-language="en">EN</span>
+                    </div>
+                </li>
+                <li class="nav__item"><a href="#inicio" class="nav__link" data-section="nav" data-value="about">SOBRE MÍ</a></li>
+                <li class="nav__item"><a href="#proyectos" class="nav__link" data-section="nav" data-value="projects">PROYECTOS</a></li>
+                <li class="nav__item"><a href="#contacto" class="nav__link" data-section="nav" data-value="contact">CONTACTO</a></li>
             </ul>
             <div class="nav__social">
                 <ul class="social__list">
@@ -46,46 +53,47 @@
    <main class="app-container">
         <section id="inicio" class="hero">
             <div class="fade-in">
-                <h1 class="hero__title">BRIAN</h1>
-                <h2 class="hero__subtitle">Estudiante TUDAI</h2>
+                <h1 class="hero__title">BRIAN SUHIT</h1>
+                <h2 class="hero__subtitle" data-section="profile" data-value="title">Estudiante de TUDAI | Ingeniero en IA</h2>
             </div>
         </section>
         <section id="proyectos" class="projects">
+            <h2 class="contact__title fade-in" data-section="projects" data-value="title">PROYECTOS</h2>
             <div class="projects__grid fade-in">
                 <a href="https://github.com/BrianSuhit/python-ai-journey/tree/main/01-chatbot" class="card" target="_blank" rel="noopener noreferrer">
                     <div class="card__image-container">
-                        <img src="assets/images/placeholder.jpg" alt="Vista previa del proyecto">
+                        <img src="assets/images/placeholder.jpg" alt="Vista previa del proyecto Chatbot">
                     </div>
                     <div class="card__info">
-                        <h3 class="card__title">Proyecto 01 - Chatbot</h3>
-                        <p class="card__tags">Asistente virtual clásico basado en reglas.</p>
+                        <h3 class="card__title" data-section="projects" data-value="p1_title">Proyecto 01 - Chatbot</h3>
+                        <p class="card__tags" data-section="projects" data-value="p1_desc">Asistente virtual clásico basado en reglas.</p>
                     </div>
                 </a>
                 <a href="https://github.com/BrianSuhit/python-ai-journey/tree/main/02-sentiment-analysis" class="card" target="_blank" rel="noopener noreferrer">
                     <div class="card__image-container">
-                        <img src="assets/images/placeholder.jpg" alt="Vista previa del proyecto">
+                        <img src="assets/images/placeholder.jpg" alt="Vista previa del proyecto Análisis de Sentimiento">
                     </div>
                     <div class="card__info">
-                        <h3 class="card__title">Proyecto 02 - Sentiment Analysis</h3>
-                        <p class="card__tags">Análisis de sentimiento básico mediante NLP (Procesamiento de Lenguaje Natural).</p>
+                        <h3 class="card__title" data-section="projects" data-value="p2_title">Proyecto 02 - Sentiment Analysis</h3>
+                        <p class="card__tags" data-section="projects" data-value="p2_desc">Análisis de sentimiento básico mediante NLP (Procesamiento de Lenguaje Natural).</p>
                     </div>
                 </a>
                 <a href="https://github.com/BrianSuhit/python-ai-journey/tree/main/03-data-extractor" class="card" target="_blank" rel="noopener noreferrer">
                     <div class="card__image-container">
-                        <img src="assets/images/placeholder.jpg" alt="Vista previa del proyecto">
+                        <img src="assets/images/placeholder.jpg" alt="Vista previa del proyecto Extractor de Datos">
                     </div>
                     <div class="card__info">
-                        <h3 class="card__title">Proyecto 03 - Data Extractor</h3>
-                        <p class="card__tags">Simulación básica de NER (Named Entity Recognition), extrayendo información de un texto.</p>
+                        <h3 class="card__title" data-section="projects" data-value="p3_title">Proyecto 03 - Data Extractor</h3>
+                        <p class="card__tags" data-section="projects" data-value="p3_desc">Simulación básica de NER (Named Entity Recognition), extrayendo información de un texto.</p>
                     </div>
                 </a>
                 <a href="https://github.com/BrianSuhit/python-ai-journey/tree/main/04-knn-visual" class="card" target="_blank" rel="noopener noreferrer">
                     <div class="card__image-container">
-                        <img src="assets/images/placeholder.jpg" alt="Vista previa del proyecto">
+                        <img src="assets/images/placeholder.jpg" alt="Vista previa del proyecto Clasificador KNN">
                     </div>
                     <div class="card__info">
-                        <h3 class="card__title">Proyecto 04 - Clasificador Visual KNN</h3>
-                        <p class="card__tags">Algoritmo basico de KKN para clasificar datos en un grafico</p>
+                        <h3 class="card__title" data-section="projects" data-value="p4_title">Proyecto 04 - Clasificador Visual KNN</h3>
+                        <p class="card__tags" data-section="projects" data-value="p4_desc">Algoritmo basico de KKN para clasificar datos en un grafico.</p>
                     </div>
                 </a>
                 <a href="https://github.com/BrianSuhit/python-ai-journey/tree/main/05-markov-chain" class="card" target="_blank" rel="noopener noreferrer">
@@ -93,21 +101,21 @@
                         <img src="assets/images/placeholder.jpg" alt="Vista previa del proyecto">
                     </div>
                     <div class="card__info">
-                        <h3 class="card__title">Proyecto 05 - Generador de Texto (Markov Chains)</h3>
-                        <p class="card__tags">Cadena de Markov, un modelo probabilístico que predice la "siguiente palabra" basándose en el estado actual</p>
+                        <h3 class="card__title" data-section="projects" data-value="p5_title">Proyecto 05 - Generador de Texto (Markov Chains)</h3>
+                        <p class="card__tags" data-section="projects" data-value="p5_desc">Cadena de Markov, un modelo probabilístico que predice la "siguiente palabra" basándose en el estado actual.</p>
                     </div>
                 </a>
             </div>
         </section>
         <section id="contacto" class="contact">
             <div class="contact__card fade-in">
-                <h2 class="contact__title">CONTACTO</h2>
+                <h2 class="contact__title" data-section="contact" data-value="title">CONTACTO</h2>
                 <form class="form" name="contacto" method="POST" netlify action="/success.html">
                     <input type="hidden" name="form-name" value="contacto">
-                    <input type="text" class="form__input" placeholder="Nombre" name="nombre" required>
-                    <input type="email" class="form__input" placeholder="Email" name="email" required>
-                    <textarea class="form__input" placeholder="Mensaje" name="mensaje" rows="4" required></textarea>
-                    <button type="submit" class="form__submit">ENVIAR MENSAJE</button>
+                    <input type="text" class="form__input" placeholder="Nombre" name="nombre" required data-section="contact" data-value="name">
+                    <input type="email" class="form__input" placeholder="Email" name="email" required data-section="contact" data-value="email">
+                    <textarea class="form__input" placeholder="Mensaje" name="mensaje" rows="4" required data-section="contact" data-value="message"></textarea>
+                    <button type="submit" class="form__submit" data-section="contact" data-value="button">ENVIAR MENSAJE</button>
                 </form>
             </div>
         </section>

@@ -457,3 +457,32 @@ textarea.form__input {
     }
 }
 
+/* --- ESTILOS DE IDIOMAS (MINIMALISTA) --- */
+
+.flags {
+    display: flex;          /* Los alinea en fila horizontal */
+    align-items: center;    /* Los centra verticalmente */
+    gap: 0.5rem;            /* Espacio sutil entre ES, / y EN */
+    font-size: 0.9rem;      /* Tamaño de letra prolijo */
+    font-family: var(--font-stack);
+}
+
+.flags__item {
+    cursor: pointer;
+    color: var(--text-secondary); /* Color gris apagado por defecto */
+    transition: color 0.3s ease;
+}
+
+.flags__item:hover {
+    color: var(--text-primary);    /* Se ilumina al pasar el mouse */
+}
+
+.flags__item--active {
+    color: var(--text-primary);
+    font-weight: var(--weight-bold);
+}
+
+.flags__separator {
+    color: var(--text-secondary);
+    user-select: none;             /* Evita que el usuario seleccione la barra "/" sin querer */
+}

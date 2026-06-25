@@ -105,8 +105,63 @@ document.addEventListener('DOMContentLoaded', () => {
         faders.forEach(fader => appearOnScroll.observe(fader));
     };
 
+    /**
+     * Initializes the language switcher functionality. It listens for clicks on the
+     * language flags, fetches the corresponding JSON file, and updates the text
+     * content of elements with 'data-section' attributes.
+     */
+    const initLanguageSwitcher = () => {
+        // 1. Localizar los elementos del interruptor de idiomas en el DOM
+        const flagsElement = document.getElementById("flags");
+        const textsToChange = document.querySelectorAll("[data-section]");
+
+        if (!flagsElement || textsToChange.length === 0) return;
+
+        // 2. Función asíncrona para cargar el JSON y cambiar los textos
+        const changeLanguage = async (language) => {
+            try {
+                // Hacemos una petición (fetch) al archivo JSON correspondiente
+                const requestJson = await fetch(`./languages/${language}.json`);
+                const texts = await requestJson.json();
+
+                // Recorremos todos los elementos etiquetados en el HTML
+                for (const textToChange of textsToChange) {
+                    const section = textToChange.dataset.section;
+                    const value = textToChange.dataset.value;
+
+                    // Si el elemento es un input o textarea, cambiamos el placeholder
+                    if (textToChange.tagName === "INPUT" || textToChange.tagName === "TEXTAREA") {
+                        textToChange.placeholder = texts[section][value];
+                    } else {
+                        // Para los demás elementos, cambiamos el contenido HTML
+                        textToChange.innerHTML = texts[section][value];
+                    }
+                }
+            } catch (error) {
+                console.error("Error al cargar el archivo de idioma:", error);
+            }
+        };
+
+        // 3. Escuchar el clic en el contenedor de idiomas
+        flagsElement.addEventListener("click", (e) => {
+            // Obtenemos el idioma del elemento clickeado
+            const language = e.target.dataset.language;
+
+            // Si efectivamente se clickeó un idioma (y no la barra "/")
+            if (language) {
+                // A. Ejecutamos la traducción
+                changeLanguage(language);
+
+                // B. Lógica visual: actualizamos la clase activa
+                flagsElement.querySelector(".flags__item--active")?.classList.remove("flags__item--active");
+                e.target.classList.add("flags__item--active");
+            }
+        });
+    };
+
     // Initialize all functionalities
     initDirectionalScroll();
     initMobileMenu();
     initScrollReveal();
+    initLanguageSwitcher();
 });
