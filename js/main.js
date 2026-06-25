@@ -111,6 +111,9 @@ document.addEventListener('DOMContentLoaded', () => {
      * content of elements with 'data-section' attributes.
      */
     const initLanguageSwitcher = () => {
+        const LANGUAGE_STORAGE_KEY = 'portfolio_lang';
+        const DEFAULT_LANGUAGE = 'es';
+
         // 1. Localizar los elementos del interruptor de idiomas en el DOM
         const flagsElement = document.getElementById("flags");
         const textsToChange = document.querySelectorAll("[data-section]");
@@ -124,16 +127,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 const requestJson = await fetch(`./languages/${language}.json`);
                 const texts = await requestJson.json();
 
+                // Actualizar el atributo lang del HTML para accesibilidad
+                document.documentElement.lang = language;
+
                 // Recorremos todos los elementos etiquetados en el HTML
                 for (const textToChange of textsToChange) {
                     const section = textToChange.dataset.section;
                     const value = textToChange.dataset.value;
 
+                    // Asegurarnos de que la clave existe antes de intentar asignarla
+                    if (!texts[section] || !texts[section][value]) {
+                        continue;
+                    }
+
                     // Si el elemento es un input o textarea, cambiamos el placeholder
                     if (textToChange.tagName === "INPUT" || textToChange.tagName === "TEXTAREA") {
                         textToChange.placeholder = texts[section][value];
                     } else {
-                        // Para los demás elementos, cambiamos el contenido HTML
                         textToChange.innerHTML = texts[section][value];
                     }
                 }
@@ -142,21 +152,36 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
+        const setActiveFlag = (language) => {
+            flagsElement.querySelector(".flags__item--active")?.classList.remove("flags__item--active");
+            flagsElement.querySelector(`[data-language="${language}"]`)?.classList.add("flags__item--active");
+        };
+
         // 3. Escuchar el clic en el contenedor de idiomas
         flagsElement.addEventListener("click", (e) => {
             // Obtenemos el idioma del elemento clickeado
-            const language = e.target.dataset.language;
+            const newLanguage = e.target.dataset.language;
 
             // Si efectivamente se clickeó un idioma (y no la barra "/")
-            if (language) {
+            if (newLanguage) {
                 // A. Ejecutamos la traducción
-                changeLanguage(language);
+                changeLanguage(newLanguage);
 
-                // B. Lógica visual: actualizamos la clase activa
-                flagsElement.querySelector(".flags__item--active")?.classList.remove("flags__item--active");
-                e.target.classList.add("flags__item--active");
+                // B. Lógica visual
+                setActiveFlag(newLanguage);
+
+                // C. Guardamos la preferencia en localStorage
+                localStorage.setItem(LANGUAGE_STORAGE_KEY, newLanguage);
             }
         });
+
+        // 4. Al cargar la página, comprobar si hay un idioma guardado
+        const savedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY);
+        const initialLanguage = savedLanguage || DEFAULT_LANGUAGE;
+
+        // Aplicamos el idioma inicial
+        changeLanguage(initialLanguage);
+        setActiveFlag(initialLanguage);
     };
 
     // Initialize all functionalities

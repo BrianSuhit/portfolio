@@ -3,22 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensaje Enviado</title>
+    <title data-section="success" data-value="title">Mensaje Enviado</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist-mono/dist/fonts.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap">
 </head>
 <body>
     <main class="app-container">
         <section class="hero">
             <div class="contact__card" style="text-align: center;">
                 <i class="fas fa-check-circle" style="font-size: 4rem; margin-bottom: 1rem; color: #28a745;"></i>
-                <h1>MENSAJE ENVIADO</h1>
-                <p>Gracias por contactarme. Te responderé a la brevedad.</p>
-                <a href="/" class="form__submit" style="width: auto; display: inline-block; padding: 1rem 3rem;">VOLVER AL INICIO</a>
+                <h1 data-section="success" data-value="header">MENSAJE ENVIADO</h1>
+                <p data-section="success" data-value="message">Gracias por contactarme. Te responderé a la brevedad.</p>
+                <a href="/" class="form__submit" style="width: auto; display: inline-block; padding: 1rem 3rem;" data-section="success" data-value="button">VOLVER AL INICIO</a>
             </div>
         </section>
     </main>
-    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const textsToChange = document.querySelectorAll("[data-section='success']");
+            const savedLanguage = localStorage.getItem('portfolio_lang') || 'es';
+
+            const changeSuccessLanguage = async (language) => {
+                try {
+                    // La ruta al JSON es relativa a la página de éxito
+                    const response = await fetch(`./languages/${language}.json`);
+                    const texts = await response.json();
+                    
+                    document.documentElement.lang = language;
+
+                    for (const textToChange of textsToChange) {
+                        const value = textToChange.dataset.value;
+                        if (texts.success && texts.success[value]) {
+                            if (textToChange.tagName === 'TITLE') {
+                                textToChange.innerText = texts.success[value];
+                            } else {
+                                textToChange.innerHTML = texts.success[value];
+                            }
+                        }
+                    }
+                } catch (error) {
+                    console.error("Error loading success page language:", error);
+                }
+            };
+
+            changeSuccessLanguage(savedLanguage);
+        });
+    </script>
 </body>
 </html>

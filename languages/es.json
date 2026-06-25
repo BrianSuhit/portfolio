@@ -26,5 +26,11 @@
         "email": "Email",
         "message": "Mensaje",
         "button": "Enviar Mensaje"
+    },
+    "success": {
+        "title": "Mensaje Enviado",
+        "header": "Mensaje Enviado",
+        "message": "Gracias por contactarme. Te responderé a la brevedad.",
+        "button": "Volver al Inicio"
     }
 }

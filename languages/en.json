@@ -26,5 +26,11 @@
         "email": "Email",
         "message": "Message",
         "button": "Send Message"
+    },
+    "success": {
+        "title": "Message Sent",
+        "header": "Message Sent",
+        "message": "Thank you for contacting me. I will get back to you shortly.",
+        "button": "Back to Home"
     }
 }
