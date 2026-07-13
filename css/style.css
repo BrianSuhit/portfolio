@@ -142,6 +142,11 @@ body {
     z-index: 1100;
 }
 
+.nav__toggle--hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
 .nav__overlay {
     position: fixed;
     inset: 0;

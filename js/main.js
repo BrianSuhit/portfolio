@@ -62,14 +62,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const openMenu = () => {
             navOverlay.classList.add('nav__overlay--active');
-            navToggle.style.opacity = '0';
-            navToggle.style.pointerEvents = 'none';
+            navToggle.classList.add('nav__toggle--hidden');
         };
 
         const closeMenu = () => {
             navOverlay.classList.remove('nav__overlay--active');
-            navToggle.style.opacity = '1';
-            navToggle.style.pointerEvents = 'all';
+            navToggle.classList.remove('nav__toggle--hidden');
         };
 
         navToggle.addEventListener('click', openMenu);
