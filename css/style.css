@@ -337,13 +337,30 @@ body {
         display: none;
     }
 
-    /* On mobile, the grid will stack automatically due to auto-fit */
-    .projects__grid {
-        padding: 0 1rem; /* Adjust padding for mobile */
+    .projects {
+        padding: 5rem 1rem; /* Reduce padding on mobile */
+    }
+
+    .projects-list {
+        gap: 4rem; /* Reduce space between projects */
     }
 
     .project-row {
         grid-template-columns: 1fr; /* Stack columns on mobile */
+        gap: 2rem; /* Reduce gap between image and info */
+    }
+
+    .project-row__info {
+        align-items: center; /* Center info block content */
+        text-align: center;
+    }
+
+    .project-row__title {
+        font-size: 1.2rem; /* Slightly smaller title on mobile */
+    }
+
+    .project-row__actions {
+        justify-content: center; /* Center action buttons */
     }
 }
 
