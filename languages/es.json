@@ -9,16 +9,12 @@
     },
     "projects": {
         "title": "Proyectos",
-        "p1_title": "Proyecto 01 - Chatbot",
-        "p1_desc": "Asistente virtual clásico basado en reglas.",
-        "p2_title": "Proyecto 02 - Sentiment Analysis",
-        "p2_desc": "Análisis de sentimiento básico mediante NLP (Procesamiento de Lenguaje Natural).",
-        "p3_title": "Proyecto 03 - Data Extractor",
-        "p3_desc": "Simulación básica de NER (Named Entity Recognition), extrayendo información de un texto.",
-        "p4_title": "Proyecto 04 - Clasificador Visual KNN",
-        "p4_desc": "Algoritmo básico de KNN para clasificar datos en un gráfico.",
-        "p5_title": "Proyecto 05 - Generador de Texto (Markov Chains)",
-        "p5_desc": "Cadena de Markov, un modelo probabilístico que predice la 'siguiente palabra' basándose en el estado actual."
+        "p1_title": "ai engineering roadmap ( legacy )",
+        "p1_desc": "Roadmap interactivo para ingenieros de IA replicando el roadmap de roadmap.sh. ( reemplazado por el proyecto 'ai engineering path' )",
+        "p2_title": "ai engineering path",
+        "p2_desc": "Mi guía interactiva de estudio. diseñada para estructurar todo mi aprendizaje en mi especializacion como ingeniero de IA.",
+        "demo_button": "Ver Demo",
+        "code_button": "Ver Código"
     },
     "contact": {
         "title": "Contacto",

@@ -9,16 +9,12 @@
     },
     "projects": {
         "title": "Projects",
-        "p1_title": "Project 01 - Chatbot",
-        "p1_desc": "Classic rule-based virtual assistant.",
-        "p2_title": "Project 02 - Sentiment Analysis",
-        "p2_desc": "Basic sentiment analysis using NLP (Natural Language Processing).",
-        "p3_title": "Project 03 - Data Extractor",
-        "p3_desc": "Basic simulation of NER (Named Entity Recognition), extracting information from text.",
-        "p4_title": "Project 04 - KNN Visual Classifier",
-        "p4_desc": "Basic KNN algorithm to classify data on a graph.",
-        "p5_title": "Project 05 - Text Generator (Markov Chains)",
-        "p5_desc": "A Markov chain, a probabilistic model that predicts the 'next word' based on the current state."
+        "p1_title": "ai engineering roadmap ( legacy )",
+        "p1_desc": "Interactive roadmap for AI engineers, replicating the roadmap.sh roadmap. (Replaced by the 'ai engineering path' project)",
+        "p2_title": "ai engineering path",
+        "p2_desc": "My interactive study guide, designed to structure all my learning in my specialization as an AI engineer.",
+        "demo_button": "View Demo",
+        "code_button": "View Code"
     },
     "contact": {
         "title": "Contact",
