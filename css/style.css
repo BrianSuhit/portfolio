@@ -332,6 +332,11 @@ body {
         font-size: 15vw;
         letter-spacing: -2px;
     }
+
+    .hero__subtitle {
+        letter-spacing: 0.1em; /* Reduce letter spacing on mobile */
+        padding: 0 1rem; /* Add padding to prevent touching edges */
+    }
     
     /* Hide desktop nav elements and show mobile toggle */
     .nav__toggle {
