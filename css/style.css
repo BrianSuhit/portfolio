@@ -10,6 +10,12 @@
     --weight-bold: 700;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     background-color: var(--bg-core);
     font-family: var(--font-stack);
