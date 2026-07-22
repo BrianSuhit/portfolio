@@ -13,6 +13,8 @@
         "p1_desc": "Interactive roadmap for AI engineers, replicating the roadmap.sh roadmap. (Replaced by the 'ai engineering path' project)",
         "p2_title": "ai engineering path",
         "p2_desc": "My interactive study guide, designed to structure all my learning in my specialization as an AI engineer.",
+        "p3_title": "tudai chatbot",
+        "p3_desc": "Capstone project of the 'AI Engineering Path'. A RAG virtual assistant for TUDAI freshmen, built with Gemini Interactions API (BYOK approach), Vanilla AI Guardrails against hallucinations and prompt injections, and deployed on Streamlit.",
         "demo_button": "View Demo",
         "code_button": "View Code"
     },
