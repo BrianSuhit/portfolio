@@ -12,7 +12,9 @@
         "p1_title": "ai engineering roadmap ( legacy )",
         "p1_desc": "Roadmap interactivo para ingenieros de IA replicando el roadmap de roadmap.sh. ( reemplazado por el proyecto 'ai engineering path' )",
         "p2_title": "ai engineering path",
-        "p2_desc": "Mi guía interactiva de estudio. diseñada para estructurar todo mi aprendizaje en mi especializacion como ingeniero de IA.",
+        "p2_desc": "Mi guía interactiva de estudio, diseñada para estructurar todo mi aprendizaje en mi especialización como ingeniero de IA.",
+        "p3_title": "tudai chatbot",
+        "p3_desc": "Proyecto cúlmine del 'AI Engineering Path'. Un asistente virtual RAG para ingresantes de TUDAI, construido con Gemini Interactions API (enfoque BYOK), AI Guardrails Vanilla contra alucinaciones e inyecciones de prompts, y desplegado en Streamlit.",
         "demo_button": "Ver Demo",
         "code_button": "Ver Código"
     },
