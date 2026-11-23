@@ -3,139 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brian Suhit - Portfolio</title>
-    <meta name="description" content="Portfolio de Brian Suhit, estudiante de la Tecnicatura Universitaria en Desarrollo de Aplicaciones Informáticas (TUDAI) con un enfoque en AI Engineering.">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap">
+    <title>Brian Suhit | Portfolio</title>
+    <meta name="description" content="AI Engineer | Estudiante TUDAI (UNICEN)">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="nav">
-        <button class="nav__toggle" aria-label="Abrir menú">
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="nav__overlay">
-            <button class="nav__close" aria-label="Cerrar menú">
-                <i class="fas fa-times"></i>
-            </button>
-            <ul class="nav__list">
-                <li class="nav__item">
-                    <div id="flags" class="flags">
-                        <span class="flags__item flags__item--active" data-language="es">ES</span>
-                        <span class="flags__separator">/</span>
-                        <span class="flags__item" data-language="en">EN</span>
-                    </div>
-                </li>
-                <li class="nav__item"><a href="#inicio" class="nav__link" data-section="nav" data-value="about">SOBRE MÍ</a></li>
-                <li class="nav__item"><a href="#proyectos" class="nav__link" data-section="nav" data-value="projects">PROYECTOS</a></li>
-                <li class="nav__item"><a href="#contacto" class="nav__link" data-section="nav" data-value="contact">CONTACTO</a></li>
+    <header>
+      <button class="hamburger-menu"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="main-nav"
+      >
+        &#9776;
+      </button>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="articles.html">Artículos</a></li>
+                <li><a href="projects.html">Proyectos</a></li>
+                <li><a href="contact.html">Contacto</a></li>
             </ul>
-            <div class="nav__social">
-                <ul class="social__list">
-                    <li><a href="https://github.com/BrianSuhit" target="_blank" class="social__link"><i class="fab fa-github"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/briansuhit/" target="_blank" class="social__link"><i class="fab fa-linkedin-in"></i></a></li>
-                </ul>
-            </div>
-        </div>
+        </nav>
     </header>
-    <aside class="social">
-        <ul class="social__list">
-            <li><a href="https://github.com/BrianSuhit" target="_blank" class="social__link"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/briansuhit/" target="_blank" class="social__link"><i class="fab fa-linkedin-in"></i></a></li>
-        </ul>
-    </aside>
-    <aside class="scroll-indicator">
-        <div class="scroll-line line-top"></div>
-        <span class="scroll-text">SCROLL</span>
-        <div class="scroll-line line-bottom"></div>
-    </aside>
-   <main class="app-container">
-        <section id="inicio" class="hero">
-            <div class="fade-in">
-                <h1 class="hero__title">BRIAN SUHIT</h1>
-                <h2 class="hero__subtitle" data-section="profile" data-value="title">Estudiante de TUDAI | Ingeniero en IA</h2>
-            </div>
-        </section>
-        <section id="proyectos" class="projects">
-            <h2 class="contact__title fade-in" data-section="projects" data-value="title">PROYECTOS</h2>
-            <div class="projects-list fade-in">
-                <!-- Project 3 -->
-                <div class="project-row">
-                    <div class="project-row__image-container">
-                        <img src="assets/images/project-chatbot.png" alt="TUDAI Chatbot">
-                    </div>
-                    <div class="project-row__info">
-                        <h3 class="project-row__title" data-section="projects" data-value="p3_title">tudai chatbot</h3>
-                        <p class="project-row__description" data-section="projects" data-value="p3_desc">Un chatbot interactivo diseñado para responder preguntas sobre la carrera de TUDAI, utilizando IA generativa.</p>
-                        <div class="project-row__tech-list">
-                            <span class="project-row__tech-item">Python</span>
-                            <span class="project-row__tech-item">Google API</span>
-                            <span class="project-row__tech-item">Streamlit</span>
-                            <span class="project-row__tech-item">ChromaDB</span>
-                        </div>
-                        <div class="project-row__actions">
-                            <a href="https://tudai-chatbot.streamlit.app/" target="_blank" rel="noopener noreferrer" class="project-row__link" data-section="projects" data-value="demo_button">Ver Demo</a>
-                            <a href="https://github.com/BrianSuhit/tudai-chatbot" target="_blank" rel="noopener noreferrer" class="project-row__link" data-section="projects" data-value="code_button">Ver Código</a>
-                        </div>
-                    </div>
+    <main>
+        <section>
+            <div>
+                <h1>Brian Suhit</h1>
+                <h2>Estudiante de TUDAI · AI Engineer</h2>
+                <p>Desarrollo proyectos que integran IA mediante APIs y sistemas RAG.</p>
+                <div class="hero-buttons">
+                    <a href="projects.html" class="btn btn-primary">Ver proyectos</a>
+                    <a href="https://github.com/BrianSuhit" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://www.linkedin.com/in/briansuhit/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </div>
-
-                <!-- Project 2 -->
-                <div class="project-row">
-                    <div class="project-row__image-container">
-                        <img src="assets/images/project-path.png" alt="AI Engineering Path">
-                    </div>
-                    <div class="project-row__info">
-                        <h3 class="project-row__title" data-section="projects" data-value="p2_title">ai engineering path</h3>
-                        <p class="project-row__description" data-section="projects" data-value="p2_desc">El camino para convertirse en un ingeniero de IA.</p>
-                        <div class="project-row__tech-list">
-                            <span class="project-row__tech-item">HTML5</span>
-                            <span class="project-row__tech-item">CSS3</span>
-                            <span class="project-row__tech-item">JavaScript</span>
-                            <span class="project-row__tech-item">Python</span>
-                        </div>
-                        <div class="project-row__actions">
-                            <a href="https://briansuhit.github.io/ai-engineering-path/" target="_blank" rel="noopener noreferrer" class="project-row__link" data-section="projects" data-value="demo_button">Ver Demo</a>
-                            <a href="https://github.com/BrianSuhit/ai-engineering-path" target="_blank" rel="noopener noreferrer" class="project-row__link" data-section="projects" data-value="code_button">Ver Código</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 1 -->
-                <div class="project-row">
-                    <div class="project-row__image-container">
-                        <img src="assets/images/project-roadmap.png" alt="AI Engineering Roadmap">
-                    </div>
-                    <div class="project-row__info">
-                        <h3 class="project-row__title" data-section="projects" data-value="p1_title">ai engineering roadmap ( legacy )</h3>
-                        <p class="project-row__description" data-section="projects" data-value="p1_desc">Una hoja de ruta detallada para la ingeniería de IA.</p>
-                        <div class="project-row__tech-list">
-                            <span class="project-row__tech-item">HTML5</span>
-                            <span class="project-row__tech-item">CSS3</span>
-                            <span class="project-row__tech-item">JavaScript</span>
-                        </div>
-                        <div class="project-row__actions">
-                            <a href="https://briansuhit.github.io/ai-engineering-legacy/" target="_blank" rel="noopener noreferrer" class="project-row__link" data-section="projects" data-value="demo_button">Ver Demo</a>
-                            <a href="https://github.com/BrianSuhit/ai-engineering-legacy" target="_blank" rel="noopener noreferrer" class="project-row__link" data-section="projects" data-value="code_button">Ver Código</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="contacto" class="contact">
-            <div class="contact__card fade-in">
-                <h2 class="contact__title" data-section="contact" data-value="title">CONTACTO</h2>
-                <form class="form" name="contacto" method="POST" netlify action="/success.html">
-                    <input type="hidden" name="form-name" value="contacto">
-                    <input type="text" class="form__input" placeholder="Nombre" name="nombre" required data-section="contact" data-value="name">
-                    <input type="email" class="form__input" placeholder="Email" name="email" required data-section="contact" data-value="email">
-                    <textarea class="form__input" placeholder="Mensaje" name="mensaje" rows="4" required data-section="contact" data-value="message"></textarea>
-                    <button type="submit" class="form__submit" data-section="contact" data-value="button">ENVIAR MENSAJE</button>
-                </form>
             </div>
         </section>
     </main>
+    <footer>
+        <p>AI-assisted · Human-driven</p>
+        <p>@ 2026 brian suhit</p>
+    </footer>
     <script src="js/main.js" defer></script>
 </body>
 </html>
