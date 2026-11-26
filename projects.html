@@ -6,7 +6,7 @@
     <title>Proyectos | Brian Suhit</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -21,7 +21,7 @@
         <nav id="main-nav">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="articles.html">Artículos</a></li>
+                <li><a href="notes.html">Notas técnicas</a></li>
                 <li><a href="projects.html">Proyectos</a></li>
                 <li><a href="contact.html">Contacto</a></li>
             </ul>
@@ -30,12 +30,13 @@
     <main>
         <section>
             <h1>Proyectos</h1>
-            <p>Ordenados del más reciente al más antiguo.</p>
+            <p>Ordenados cronológicamente · Serie EcoTandil desarrollada para la iniciativa Tandil 2050.</p>
             <article>
                 <h2>EcoTandil - Waste Classifier</h2>
-                <p>Clasificador multimodal de residuos con mapa interactivo de puntos limpios.</p>
+                <p>Clasificador multimodal (texto e imagen) con Structured Outputs y mapa interactivo con Folium para localizar el Punto Limpio más cercano.</p>
                 <div class="project-tags">
                     <span>Python</span>
+                    <span>Gemini API</span>
                     <span>Streamlit</span>
                     <span>Folium</span>
                 </div>
@@ -44,20 +45,22 @@
             </article>
             <article>
                 <h2>EcoTandil - Auditor</h2>
-                <p>Auditor de proyectos, sistema RAG sobre PDT.</p>
+                <p>Auditor normativo con RAG sobre el Plan de Desarrollo Territorial (PDT). Valida cumplimiento y cita artículos específicos mediante Structured Outputs.</p>
                 <div class="project-tags">
                     <span>Python</span>
-                    <span>Streamlit</span>
+                    <span>Gemini API</span>
                     <span>RAG</span>
+                    <span>Streamlit</span>
                 </div>
                 <a href="https://github.com/BrianSuhit/EcoTandil-Auditor" target="_blank" rel="noopener noreferrer">Repositorio</a>
                 <a href="https://ecotandil-auditor-tzpabtht7vqt2pj63ta4v9.streamlit.app/" target="_blank" rel="noopener noreferrer">Demo</a>
             </article>
             <article>
                 <h2>EcoTandil - ecoTips</h2>
-                <p>Generador de tips de reciclaje para estudiantes de primaria/secundaria.</p>
+                <p>Generador interactivo de tips y prácticas pedagógicas de reciclaje para estudiantes de nivel primario y secundario.</p>
                 <div class="project-tags">
                     <span>Python</span>
+                    <span>Gemini API</span>
                     <span>Streamlit</span>
                 </div>
                 <a href="https://github.com/BrianSuhit/EcoTandil-ecoTips" target="_blank" rel="noopener noreferrer">Repositorio</a>
@@ -77,7 +80,7 @@
         </section>
     </main>
     <footer>
-        <p>AI-assisted · Human-driven</p>
+        <p>● AVAILABLE FOR CONTRACTS</p>
         <p>@ 2026 brian suhit</p>
     </footer>
     <script src="js/main.js" defer></script>
