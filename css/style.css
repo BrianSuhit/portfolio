@@ -259,102 +259,6 @@ article a::after {
   word-break: break-all;
 }
 
-/* Notas Técnicas (Listado) */
-.notes-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.75rem;
-  margin-top: 2rem;
-}
-
-a.note-card {
-  display: block;
-  position: relative;
-  padding: 1.5rem 1.5rem;
-  background: linear-gradient(110deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 35%, transparent 75%);
-  border: none;
-  box-shadow: -10px 14px 30px rgba(0, 0, 0, 0.7);
-  text-decoration: none;
-  margin: 0;
-  transition: transform 0.15s ease, background 0.2s ease;
-}
-
-a.note-card:hover {
-  background: linear-gradient(110deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.02) 35%, transparent 75%);
-  transform: translateY(-2px);
-}
-
-.note-meta {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.8rem;
-  color: #7f8a99;
-  margin-bottom: 0.6rem;
-}
-
-a.note-card h2 {
-  font-size: 1.25rem;
-  color: #ffffff;
-  margin: 0 0 0.65rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-a.note-card h2::after {
-  content: '\2197';
-  font-size: 0.9em;
-  color: #a0a6ad;
-  transition: transform 0.15s ease, color 0.15s ease;
-}
-
-a.note-card:hover h2::after {
-  color: #ffffff;
-  transform: translate(2px, -2px);
-}
-
-a.note-card p {
-  margin: 0;
-  color: #a0a6ad;
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-/* Nota Individual (Páginas dentro de /notes) */
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  font-size: 0.88rem;
-  color: #7f8a99;
-  margin-bottom: 2rem;
-  transition: color 0.2s ease;
-}
-
-.back-link:hover {
-  color: #ffffff;
-}
-
-.note-content h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
-  margin-bottom: 0.75rem;
-}
-
-.note-content p {
-  color: #c0c6cd;
-  font-size: 1rem;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-}
-
-.note-content h2 {
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  font-size: 1.35rem;
-}
-
-
-
 @media screen and (min-width: 768px) {
   header {
     padding: 1.5rem 3rem;
@@ -429,24 +333,6 @@ a.note-card p {
   .contact-item a,
   .contact-item span {
     font-size: 1.1rem;
-  }
-
-  /* Notas en Desktop */
-  .notes-list {
-    margin-top: 2.5rem;
-    gap: 2rem;
-  }
-
-  a.note-card {
-    padding: 1.75rem 2rem;
-  }
-
-  a.note-card h2 {
-    font-size: 1.4rem;
-  }
-
-  a.note-card p {
-    font-size: 1.05rem;
   }
 
   footer {
